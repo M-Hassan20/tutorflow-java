@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: tutorflow-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: tutorflow
+      MYSQL_PASSWORD: tutorflow123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - tutorflow-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: tutorflow-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - tutorflow-net
+
+networks:
+  tutorflow-net:
+    driver: bridge
+
+volumes:
+  mysql_data:
