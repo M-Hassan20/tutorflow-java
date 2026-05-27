@@ -1,0 +1,11 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: dryrun-service
+
+execution:
+  timeout-seconds: 15
+docker:
+  host: npipe:////./pipe/docker_engine
