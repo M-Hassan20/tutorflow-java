@@ -1,0 +1,15 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: tutor-service
+  datasource:
+    url: jdbc:mysql://localhost:3307/tutorflow_tutor
+    username: tutorflow
+    password: tutorflow123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
