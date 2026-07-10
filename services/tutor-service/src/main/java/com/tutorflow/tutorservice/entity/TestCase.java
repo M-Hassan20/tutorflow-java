@@ -1,18 +1,16 @@
 package com.tutorflow.tutorservice.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@Table(name="test_cases")
+@Table(name = "test_cases")
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class TestCase {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,5 +27,4 @@ public class TestCase {
     private boolean hidden;
 
     private int orderIndex;
-
 }

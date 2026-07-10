@@ -6,9 +6,9 @@ services:
     image: mysql:8.0
     container_name: tutorflow-mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: tutorflow
-      MYSQL_PASSWORD: tutorflow123
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3307:3306"
     volumes:

@@ -8,4 +8,5 @@ public class CreateClassroomRequest {
     @NotBlank
     private String name;
     private Long tutorId;
+    private Integer capacity;
 }

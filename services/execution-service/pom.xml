@@ -66,6 +66,11 @@
 			<artifactId>httpcore5-h2</artifactId>
 			<version>5.2.4</version>
 		</dependency>
+		<dependency>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>spring-dotenv</artifactId>
+			<version>4.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

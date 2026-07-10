@@ -19,4 +19,6 @@ public interface AssignmentRepository extends JpaRepository<Assignment, Long> {
             @Param("studentId") Long studentId,
             @Param("now") LocalDateTime now,
             @Param("allType") TargetType allType);
+
+    List<Assignment> findByClassroomIdAndDeletedFalse(Long classroomId);
 }

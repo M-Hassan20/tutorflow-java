@@ -34,6 +34,8 @@ public class Classroom {
     @Builder.Default
     private Set<Long> studentIds = new HashSet<>();
 
+    private Integer capacity;
+
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -41,4 +43,10 @@ public class Classroom {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean deleted = false;
+
+    private LocalDateTime deletedAt;
 }

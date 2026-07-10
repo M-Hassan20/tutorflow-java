@@ -41,6 +41,14 @@ public class Submission {
     @Builder.Default
     private SubmissionStatus status = SubmissionStatus.PENDING;
 
+    private int attemptNumber;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean flagged = false;
+
+    private String teacherNote;
+
     @Column(nullable = false, updatable = false)
     private LocalDateTime submittedAt;
 

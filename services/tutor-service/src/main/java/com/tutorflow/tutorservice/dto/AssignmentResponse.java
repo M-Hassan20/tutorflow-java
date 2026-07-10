@@ -1,8 +1,10 @@
 package com.tutorflow.tutorservice.dto;
 
+import com.tutorflow.tutorservice.enums.GradingMode;
 import com.tutorflow.tutorservice.enums.TargetType;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -20,5 +22,10 @@ public class AssignmentResponse {
     private LocalDateTime releaseDate;
     private TargetType targetType;
     private Set<Long> targetStudentIds;
+    private String expectedOutput;
+    private GradingMode gradingMode;
+    private Integer maxAttempts;
+    private boolean published;
+    private List<TestCaseDto> testCases;
     private LocalDateTime createdAt;
 }

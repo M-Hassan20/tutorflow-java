@@ -14,5 +14,6 @@ public class ClassroomResponse {
     private String joinCode;
     private Long tutorId;
     private Set<Long> studentIds;
+    private Integer capacity;
     private LocalDateTime createdAt;
 }

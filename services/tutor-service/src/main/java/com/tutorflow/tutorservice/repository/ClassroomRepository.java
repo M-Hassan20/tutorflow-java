@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ClassroomRepository extends JpaRepository<Classroom, Long> {
-    Optional<Classroom> findByJoinCode(String joinCode);
-    List<Classroom> findByTutorId(Long tutorId);
-    List<Classroom> findByStudentIdsContaining(Long studentId);
+    Optional<Classroom> findByJoinCodeAndDeletedFalse(String joinCode);
+    List<Classroom> findByTutorIdAndDeletedFalse(Long tutorId);
+    List<Classroom> findByStudentIdsContainingAndDeletedFalse(Long studentId);
+    boolean existsByNameAndTutorIdAndDeletedFalse(String name, Long tutorId);
 }

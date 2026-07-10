@@ -18,5 +18,8 @@ public class SubmissionResponse {
     private Integer exitCode;
     private Long executionTimeMs;
     private SubmissionStatus status;
+    private int attemptNumber;
+    private boolean flagged;
+    private String teacherNote;
     private LocalDateTime submittedAt;
 }

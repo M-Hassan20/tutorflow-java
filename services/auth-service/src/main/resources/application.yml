@@ -6,8 +6,8 @@ spring:
     name: auth-service
   datasource:
     url: jdbc:mysql://localhost:3307/tutorflow_auth
-    username: tutorflow
-    password: tutorflow123
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
