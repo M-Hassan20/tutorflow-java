@@ -6,8 +6,8 @@ spring:
     name: parent-service
   datasource:
     url: jdbc:mysql://localhost:3307/tutorflow_parent
-    username: tutorflow
-    password: tutorflow123
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -37,3 +37,4 @@ reports:
   schedule:
     weekly: "0 0 8 * * MON"
     monthly: "0 0 8 1 * *"
+

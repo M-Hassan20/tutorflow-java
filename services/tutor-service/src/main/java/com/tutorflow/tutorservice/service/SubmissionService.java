@@ -21,6 +21,7 @@ public class SubmissionService {
     private final AssignmentRepository assignmentRepository;
     private final TestCaseRepository testCaseRepository;
     private final AutoGradingService autoGradingService;
+    private final ParentServiceClient parentServiceClient;
 
     public SubmissionResponse submit(SubmitCodeRequest request) {
         Assignment assignment = assignmentRepository
@@ -62,7 +63,17 @@ public class SubmissionService {
                 .attemptNumber(attemptNumber)
                 .build();
 
-        return toResponse(submissionRepository.save(submission));
+        Submission saved = submissionRepository.save(submission);
+
+        if(saved.getStatus() == SubmissionStatus.PASSED) {
+            parentServiceClient.awardXP(
+                    saved.getStudentId(),
+                    assignment.getClassroomId(),
+                    saved.getAssignmentId(),
+                    saved.getAttemptNumber()
+            );
+        }
+        return toResponse(saved);
     }
 
     public List<SubmissionResponse> getByAssignment(Long assignmentId) {
